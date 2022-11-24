@@ -35,4 +35,13 @@
       android:src="@drawable/ic_settings"
       android:background="@android:color/transparent"/>
 
+  <Button
+      android:layout_centerHorizontal="true"
+      android:layout_alignBottom="@id/surfaceview"
+      android:layout_marginBottom="32dp"
+      android:id="@+id/buttonRoll"
+      android:layout_width="256dp"
+      android:layout_height="72dp"
+      android:text="@string/buttonLabel" />
+
 </RelativeLayout>
