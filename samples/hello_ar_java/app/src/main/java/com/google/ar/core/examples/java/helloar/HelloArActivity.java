@@ -27,7 +27,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.MotionEvent;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
@@ -182,7 +181,7 @@ public class HelloArActivity extends AppCompatActivity implements SampleRender.R
     private final float[] worldLightDirection = {0.0f, 0.0f, 0.0f, 0.0f};
     private final float[] viewLightDirection = new float[4]; // view x world light direction
 
-    String textureName;
+    String modelDir;
     String virtualObjectTextureDir;
 
     @Override
@@ -225,7 +224,9 @@ public class HelloArActivity extends AppCompatActivity implements SampleRender.R
         Random rng = new Random();
         int randomNum = rng.nextInt(20) + 1;
 
-        virtualObjectTextureDir = getString(R.string.picName, randomNum);
+//        virtualObjectTextureDir = getString(R.string.picName, randomNum);
+        virtualObjectTextureDir = getString(R.string.imageDir, randomNum);
+        modelDir = getString(R.string.modelDir, randomNum);
     }
 
     /**
@@ -436,11 +437,11 @@ public class HelloArActivity extends AppCompatActivity implements SampleRender.R
             Texture virtualObjectPbrTexture =
                     Texture.createFromAsset(
                             render,
-                            "models/D20-highrez-texture-metallic-map.png",
+                            "models/other/pointclock_metal.png",
                             Texture.WrapMode.CLAMP_TO_EDGE,
                             Texture.ColorFormat.LINEAR);
 
-            virtualObjectMesh = Mesh.createFromAsset(render, "models/DiceCorrectRotation.obj");
+            virtualObjectMesh = Mesh.createFromAsset(render, modelDir);
             virtualObjectShader =
                     Shader.createFromAssets(
                                     render,

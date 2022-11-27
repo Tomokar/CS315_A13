@@ -34,4 +34,6 @@
     <string name="picName">models/%dup.png</string>
     <string name="buttonLabel">Roll it</string>
 
+    <string name="imageDir">models/other/pointclock%d_albedo.png</string>
+    <string name="modelDir">models/other/pointclock%d.obj</string>
 </resources>
